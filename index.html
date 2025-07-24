@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Expense Tracker</h2>
+        <div id="budget-setup" class="budget-setup">
+            <label for="initial-budget">Set Initial Budget</label>
+            <input type="number" id="initial-budget" placeholder="Enter your budget..." />
+            <div style="margin: 0.5em 0;">
+                <input type="checkbox" id="zero-budget-checkbox" />
+                <label for="zero-budget-checkbox" style="font-size:0.95em;">Initialize budget to 0</label>
+            </div>
+            <button id="set-budget-btn" class="btn">Set Budget</button>
+        </div>
+        <div id="budget-display" class="budget-display" style="display:none;">
+            <h4>Initial Budget: <span id="budget-amount">R0.00</span>
+                <button id="edit-budget-btn" class="btn" style="margin-left:10px;padding:0.2em 0.7em;font-size:0.9em;">Edit Budget</button>
+                <button id="add-budget-btn" class="btn" style="margin-left:10px;padding:0.2em 0.7em;font-size:0.9em;background:#3498db;">Add to Budget</button>
+            </h4>
+        </div>
+        <div class="balance-container">
+            <h4>Remaining Balance</h4>
+            <h1 id="balance">R0.00</h1>
+        </div>
+        <div class="inc-exp-container">
+            <div style="flex:1;text-align:center;">
+                <h4>Expense</h4>
+                <p id="money-minus" class="money minus">-R0.00</p>
+            </div>
+        </div>
+        <h3>Add new expense</h3>
+        <form id="form">
+            <div class="form-control">
+                <label for="text">Description</label>
+                <input type="text" id="text" placeholder="Enter description..." />
+            </div>
+            <div class="form-control">
+                <label for="amount">Amount <br />
+                    (enter expense amount)
+                </label>
+                <input type="number" id="amount" placeholder="Enter amount..." />
+            </div>
+            <button class="btn">Add expense</button>
+        </form>
+        <h3>History</h3>
+        <input type="text" id="search-bar" class="form-control" placeholder="Search expenses..." style="margin-bottom:1rem;" />
+        <ul id="list" class="list">
+            <!-- Transactions will appear here -->
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
